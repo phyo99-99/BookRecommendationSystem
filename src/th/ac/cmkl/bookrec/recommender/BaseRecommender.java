@@ -8,14 +8,17 @@ import th.ac.cmkl.bookrec.util.FileStorageHandler;
 import java.util.List;
 
 /**
+ * BaseRecommender
+ *
  * Abstract base class for all recommenders.
  * Implements common logic and handles shared book data access.
+ *
+ * Created by Taha Keler (TAHA)
+ * 27 April 2025
  */
-public abstract class BaseRecommender implements RecommendationEngine {
-
-    /**
-     * Shared book database used by all recommenders.
-     */
+public abstract class BaseRecommender implements RecommendationEngine
+{
+    /** Shared book database used by all recommenders */
     protected List<Book> bookDatabase;
 
     /**
@@ -23,33 +26,27 @@ public abstract class BaseRecommender implements RecommendationEngine {
      *
      * @param bookDatabase the list of books available
      */
-    public BaseRecommender(List<Book> bookDatabase) {
+    protected BaseRecommender(List<Book> bookDatabase)
+    {
         this.bookDatabase = bookDatabase;
     }
 
     /**
-     * Subclasses must implement this method to provide book recommendations.
-     *
-     * @param user the user to recommend books to
-     * @return a list of recommended books
-     */
-    @Override
-    public abstract List<Book> getRecommendations(User user);
-
-    /**
      * Retrieves the purchase history for the given user.
      *
-     * @param user the user whose history to retrieve
+     * @param user the user whose purchase history to retrieve
      * @return list of purchases the user has made
      */
-    protected List<PurchaseHistory> getUserPurchaseHistory(User user) {
+    protected List<PurchaseHistory> getUserPurchaseHistory(User user)
+    {
         return user.viewPurchaseHistory();
     }
 
     /**
      * Updates or reloads the book data from file storage.
      */
-    public void updateData() {
+    public void updateData()
+    {
         this.bookDatabase = FileStorageHandler.loadBooks();
     }
 }
