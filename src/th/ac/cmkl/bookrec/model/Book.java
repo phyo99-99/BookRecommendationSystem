@@ -1,32 +1,70 @@
 package th.ac.cmkl.bookrec.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
+ * Book
+ *
  * Represents a book with searchable and comparable attributes.
+ *
+ * Created by Taha Keler (TAHA)
+ * 27 April 2025
  */
-public class Book {
+public class Book implements Serializable
+{
+    /** Title of the book */
     private String title;
+
+    /** Author of the book */
     private String author;
+
+    /** Category or genre of the book */
     private String category;
-    private int pageCount;
+
+    /** List of searchable keywords */
     private List<String> keywords;
 
-    public Book(String title, String author, String category, int pageCount, List<String> keywords) {
+    public Book(String title, String author, String category, List<String> keywords)
+    {
         this.title = title;
         this.author = author;
         this.category = category;
-        this.pageCount = pageCount;
         this.keywords = keywords;
     }
 
-    public boolean matchesQuery(String query) {
+    public boolean matchesQuery(String query)
+    {
         return title.contains(query) || author.contains(query) || keywords.contains(query);
     }
 
-    public boolean isSimilar(Book other) {
+    public boolean isSimilar(Book other)
+    {
         return this.category.equals(other.category);
     }
 
-    // Getters and setters omitted for brevity
+    public String getCategory()
+    {
+        return category;
+    }
+
+    /**
+     * Returns the title of the book.
+     *
+     * @return the book title
+     */
+    public String getTitle()
+    {
+        return title;
+    }
+
+    /**
+     * Returns the author of the book.
+     *
+     * @return the book author
+     */
+    public String getAuthor()
+    {
+        return author;
+    }
 }

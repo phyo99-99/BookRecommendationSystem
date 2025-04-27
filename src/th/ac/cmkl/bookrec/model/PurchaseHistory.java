@@ -1,41 +1,37 @@
 package th.ac.cmkl.bookrec.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * PurchaseHistory
+ *
  * Represents a single purchase made by a user.
+ *
+ * Created by Taha Keler (TAHA)
+ * 27 April 2025
  */
-public class PurchaseHistory {
-
+public class PurchaseHistory implements Serializable
+{
+    /** Book purchased */
     private Book book;
+
+    /** Date of purchase */
     private Date purchaseDate;
 
-    /**
-     * Constructs a purchase history entry with the given book and date.
-     *
-     * @param book the book that was purchased
-     * @param purchaseDate the date the book was purchased
-     */
-    public PurchaseHistory(Book book, Date purchaseDate) {
+    public PurchaseHistory(Book book, Date purchaseDate)
+    {
         this.book = book;
         this.purchaseDate = purchaseDate;
     }
 
-    /**
-     * Returns the purchased book.
-     *
-     * @return the book
-     */
-    public Book getBook() {
+    public Book getBook()
+    {
         return book;
     }
 
-    /**
-     * Returns the purchase date.
-     *
-     * @return the purchase date
-     */
-    public Date getPurchaseDate() {
+    public Date getPurchaseDate()
+    {
         return purchaseDate;
     }
 }

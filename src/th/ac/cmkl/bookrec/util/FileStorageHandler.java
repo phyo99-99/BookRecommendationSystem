@@ -4,69 +4,101 @@ import th.ac.cmkl.bookrec.model.Book;
 import th.ac.cmkl.bookrec.model.User;
 import th.ac.cmkl.bookrec.model.PurchaseHistory;
 
+import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Handles loading and saving of data to files.
- * NOTE: Implement actual file I/O logic as needed.
+ * FileStorageHandler
+ *
+ * Handles loading and saving of Users, Books, and PurchaseHistory to files.
+ *
+ * Created by Taha Keler (TAHA)
+ * 27 April 2025
  */
-public class FileStorageHandler {
-
-    /**
-     * Loads the list of users from a file.
-     *
-     * @return list of users
-     */
-    public static List<User> loadUsers() {
-        // TODO: Implement file loading logic for users
-        return new ArrayList<>();
+public class FileStorageHandler
+{
+    private FileStorageHandler()
+    {
+        // prevent instantiation
     }
 
-    /**
-     * Saves the list of users to a file.
-     *
-     * @param users the list of users to save
-     */
-    public static void saveUsers(List<User> users) {
-        // TODO: Implement file saving logic for users
+    private static final String USERS_FILE = "users.ser";
+    private static final String BOOKS_FILE = "books.ser";
+    private static final String PURCHASE_HISTORY_FILE = "purchase_history.ser";
+
+    @SuppressWarnings("unchecked")
+    public static List<User> loadUsers()
+    {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(USERS_FILE)))
+        {
+            return (List<User>) inputStream.readObject();
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+            return new ArrayList<>();
+        }
     }
 
-    /**
-     * Loads the list of books from a file.
-     *
-     * @return list of books
-     */
-    public static List<Book> loadBooks() {
-        // TODO: Implement file loading logic for books
-        return new ArrayList<>();
+    public static void saveUsers(List<User> users)
+    {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(USERS_FILE)))
+        {
+            outputStream.writeObject(users);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    /**
-     * Saves the list of books to a file.
-     *
-     * @param books the list of books to save
-     */
-    public static void saveBooks(List<Book> books) {
-        // TODO: Implement file saving logic for books
+    @SuppressWarnings("unchecked")
+    public static List<Book> loadBooks()
+    {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(BOOKS_FILE)))
+        {
+            return (List<Book>) inputStream.readObject();
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+            return new ArrayList<>();
+        }
     }
 
-    /**
-     * Loads the purchase history from a file.
-     *
-     * @return list of purchase records
-     */
-    public static List<PurchaseHistory> loadPurchaseHistory() {
-        // TODO: Implement file loading logic for purchase history
-        return new ArrayList<>();
+    public static void saveBooks(List<Book> books)
+    {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(BOOKS_FILE)))
+        {
+            outputStream.writeObject(books);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    /**
-     * Saves the purchase history to a file.
-     *
-     * @param history the purchase history to save
-     */
-    public static void savePurchaseHistory(List<PurchaseHistory> history) {
-        // TODO: Implement file saving logic for purchase history
+    @SuppressWarnings("unchecked")
+    public static List<PurchaseHistory> loadPurchaseHistory()
+    {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(PURCHASE_HISTORY_FILE)))
+        {
+            return (List<PurchaseHistory>) inputStream.readObject();
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+            return new ArrayList<>();
+        }
+    }
+
+    public static void savePurchaseHistory(List<PurchaseHistory> history)
+    {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(PURCHASE_HISTORY_FILE)))
+        {
+            outputStream.writeObject(history);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
