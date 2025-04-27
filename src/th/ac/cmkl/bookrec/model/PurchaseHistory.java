@@ -3,20 +3,31 @@ package th.ac.cmkl.bookrec.model;
 import java.util.Date;
 
 /**
- * Represents a single purchase made by a user.
+ * PurchaseHistory
+ *
+ * Represents a record of a book purchased by a user, including
+ * the purchased book and the date of purchase.
+ *
+ * Created by Taha Keler and Phyo Theingi
+ * April 27, 2025
  */
-public class PurchaseHistory {
 
+public class PurchaseHistory
+{
+    /** The book that was purchased */
     private Book book;
+
+    /** The date when the book was purchased */
     private Date purchaseDate;
 
     /**
      * Constructs a purchase history entry with the given book and date.
      *
-     * @param book the book that was purchased
-     * @param purchaseDate the date the book was purchased
+     * @param book The book that was purchased.
+     * @param purchaseDate The date the book was purchased.
      */
-    public PurchaseHistory(Book book, Date purchaseDate) {
+    public PurchaseHistory(Book book, Date purchaseDate)
+    {
         this.book = book;
         this.purchaseDate = purchaseDate;
     }
@@ -24,18 +35,20 @@ public class PurchaseHistory {
     /**
      * Returns the purchased book.
      *
-     * @return the book
+     * @return Book that was purchased.
      */
-    public Book getBook() {
+    public Book getBook()
+    {
         return book;
     }
 
     /**
-     * Returns the purchase date.
+     * Returns the date when the book was purchased.
      *
-     * @return the purchase date
+     * @return Purchase date.
      */
-    public Date getPurchaseDate() {
+    public Date getPurchaseDate()
+    {
         return purchaseDate;
     }
 }
