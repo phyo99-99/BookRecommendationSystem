@@ -8,7 +8,7 @@ import java.util.List;
  *
  * Represents a book with searchable and comparable attributes.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public class Book implements Serializable
@@ -66,5 +66,14 @@ public class Book implements Serializable
     public String getAuthor()
     {
         return author;
+    }
+    /**
+     * Returns the list of keywords for the book.
+     *
+     * @return the list of keywords
+     */
+    public List<String> getKeywords()
+    {
+        return keywords;
     }
 }

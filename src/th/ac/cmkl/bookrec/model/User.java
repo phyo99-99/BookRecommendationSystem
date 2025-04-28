@@ -13,7 +13,7 @@ import java.util.List;
  *
  * Represents a user in the system.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public class User implements Serializable

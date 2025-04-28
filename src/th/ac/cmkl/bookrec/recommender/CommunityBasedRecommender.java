@@ -15,7 +15,7 @@ import java.util.Set;
  *
  * This class recommends books based on what other users with similar purchases have bought.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public class CommunityBasedRecommender extends BaseRecommender

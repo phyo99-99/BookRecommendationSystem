@@ -10,7 +10,7 @@ import java.util.List;
  * Interface for all recommendation engines.
  * Defines the method for getting book recommendations for a user.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public interface RecommendationEngine

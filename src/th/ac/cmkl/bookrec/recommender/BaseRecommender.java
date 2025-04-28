@@ -13,7 +13,7 @@ import java.util.List;
  * Abstract base class for all recommenders.
  * Implements common logic and handles shared book data access.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public abstract class BaseRecommender implements RecommendationEngine
