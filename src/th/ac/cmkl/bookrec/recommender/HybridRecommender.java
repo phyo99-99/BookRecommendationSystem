@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * This class combines content-based and community-based recommendations.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public class HybridRecommender extends BaseRecommender

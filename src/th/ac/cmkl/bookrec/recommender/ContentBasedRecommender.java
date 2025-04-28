@@ -14,7 +14,7 @@ import java.util.Set;
  *
  * This class recommends books based on content similarity to the books the user has purchased.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public class ContentBasedRecommender extends BaseRecommender

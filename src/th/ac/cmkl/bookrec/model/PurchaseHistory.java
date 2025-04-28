@@ -8,7 +8,7 @@ import java.util.Date;
  *
  * Represents a single purchase made by a user.
  *
- * Created by Taha Keler (TAHA)
+ * Created by Taha Keler (TAHA) and Phyo Theingi (PHYO)
  * 27 April 2025
  */
 public class PurchaseHistory implements Serializable
